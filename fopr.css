@@ -1,68 +1,76 @@
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+.calc {
+    margin: 50px auto;
+    width: 300px;
+    height: 500px;
+    border: 1px solid #000;
+    border-radius: 20px;
+    background: #000;
+    color: #fff;
+    font-family: Arial, serif;
+    padding: 18px;
+    box-shadow: 4px 4px 4px #4f4f4f;
 }
 
-header {
-    background-color: #0088cc;
-    color: #fff;
-    padding: 1rem 0;
+.calc-screen {
+    height: 125px;
+    padding: 10px;
+    display: grid;
+    justify-items: end;
+    align-items: end;
+
+}
+
+.calc-screen p {
+    text-align: right;
+    font-size: 4rem;
+    margin: 0 0 20px;
+
+
+}
+
+.buttons {
+    display: grid;
+    grid-template-areas:
+    "ac plus-minus percent division"
+    "seven eight ninie multi"
+    "four five six minus"
+    "one two three plus"
+    "zero zero dot equal";
+    grid-gap: 7px;
+    justify-items: center;
+
+}
+
+.btn {
+    width: 60px;
+    height: 60px;
+    background: #333;
+    border-radius: 50%;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    line-height: 60px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    user-select: none;
 }
 
-header .logo {
-    width: 150px;
-    height: auto;
+.btn.zero {
+    grid-area: zero;
+    width: 100%;
+    border-radius: 34px;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 20px;
+.btn:hover {
+    filter: brightness(120%);
+
+}.btn:active {
+    filter: brightness(90%);
 }
 
-nav ul li {
-    display: inline;
+.bg-grey {
+     background: #a6a6a6;
 }
 
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
+.bg-orange {
+     background: #ff9501;
 }
 
-section {
-    padding: 2rem;
-    background-color: #fff;
-    margin: 1rem auto;
-    max-width: 800px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-section h2 {
-    color: #0088cc;
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1rem 0;
-    margin-top: 2rem;
-}
-
-footer a {
-    color: #0088cc;
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
