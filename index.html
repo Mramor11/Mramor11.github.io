@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Max Rep Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>fopprf gymbot</h1>
+        <form id="calculator-form">
+            <div>
+                <label for="weight">Weight Lifted (in kg): <span id="weight-value">100</span></label>
+                <input type="range" id="weight" min="50" max="150" value="100" step="1">
+            </div>
+            <div>
+                <label for="reps">Reps Completed: <span id="reps-value">10</span></label>
+                <input type="range" id="reps" min="2" max="20" value="10" step="1">
+            </div>
+            <button type="submit">Calculate</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
