@@ -1,20 +1,32 @@
+html {
+    height: 100%;
+    margin: 0;
+}
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #000;
-    color: #000;
     margin: 0;
+    background: linear-gradient(22.75deg, #f00 -42.47%, #4021ff 134.19%);
+    color: #fff;
     padding: 20px;
 }
 
-.logo_header_container{
-    text-align: center;
-    margin-bottom: 40px;
+h1 {
+    /*color: #fff;*/
+    /*background: linear-gradient(22.75deg, #f00 -42.47%, #4021ff 134.19%);*/
+    /*-webkit-background-clip: text;*/
+    /*-webkit-text-fill-color: transparent;*/
 }
 
-.logo_header {
-    max-width: 250px;
-    height: auto;
-}
+/*.logo_header_container{*/
+/*    text-align: center;*/
+/*    margin-bottom: 40px;*/
+/*}*/
+
+/*.logo_header{*/
+/*    max-width: 250px;*/
+/*    height: auto;*/
+/*}*/
 
 .container {
     position: relative;
@@ -55,21 +67,72 @@ label {
 input[type="range"] {
     width: 100%;
 }
+input[type="range"] {
+            -webkit-appearance: none; /* Remove default styling in WebKit browsers */
+            width: 100%; /* Full-width */
+            height: 8px; /* Height of the track */
+            background: #ddd; /* Background color of the track */
+            border-radius: 5px; /* Rounded corners for the track */
+            outline: none; /* Remove default outline */
+            opacity: 0.7; /* Slightly transparent */
+            transition: opacity .2s; /* Transition for hover effect */
+        }
+
+        input[type="range"]:hover {
+            opacity: 1; /* Full opacity on hover */
+        }
+
+        /* Style the track */
+        input[type="range"]::-webkit-slider-runnable-track {
+            height: 8px; /* Height of the track */
+            background: #ddd; /* Background color of the track */
+            border-radius: 5px; /* Rounded corners */
+        }
+
+        input[type="range"]::-moz-range-track {
+            height: 8px; /* Height of the track */
+            background: #ddd; /* Background color of the track */
+            border-radius: 5px; /* Rounded corners */
+        }
+
+        /* Style the thumb */
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none; /* Remove default styling */
+            width: 20px; /* Width of the thumb */
+            height: 20px; /* Height of the thumb */
+            border-radius: 50%; /* Make the thumb circular */
+            background: #b2f6f4; /* Thumb color */
+            cursor: pointer; /* Cursor style */
+            margin-top: -6px; /* Center thumb vertically on the track */
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 20px; /* Width of the thumb */
+            height: 20px; /* Height of the thumb */
+            border-radius: 50%; /* Make the thumb circular */
+            background: #b2f6f4; /* Thumb color */
+            cursor: pointer; /* Cursor style */
+        }
 
 button {
+    -webkit-appearance: none;
     width: 200px;
     margin-top: 10px;
     padding: 17px;
     background-color: #b2f6f4;
-    border-bottom-color: #0025c2;
-    border-style: solid;
-    color: #000000;
+    border: none;
+    outline: none;
+    opacity: 0.86;
     border-radius: 30px;
+    font-size: 1em;
+    text-transform: uppercase;
+    /*mix-blend-mode: difference;*/
     cursor: pointer;
+    transition: opacity .3s;
 }
 
 button:hover {
-    background-color: #99e8e6;
+    opacity: 1;
 }
 
 #result {
