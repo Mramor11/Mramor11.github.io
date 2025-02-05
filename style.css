@@ -1,0 +1,203 @@
+/* Отключаем скроллинг и центрируем контейнер */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(120deg, #ff416c, #ff4b2b);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden; /* 🔥 Блокируем прокрутку */
+}
+
+/* Основной контейнер */
+.container {
+    max-width: 400px;
+    width: 80%;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.container:hover {
+    transform: scale(1.02);
+}
+
+h1 {
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Ползунки */
+.input-group {
+    margin: 15px 0;
+}
+
+label {
+    font-size: 16px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="range"] {
+    width: 100%;
+    -webkit-appearance: none;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    outline: none;
+    transition: 0.3s;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #ffeb3b;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+input[type="range"]:hover {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+/* Анимация результата */
+/* 1RM: теперь текст и число всегда в одной позиции */
+#result {
+    margin-top: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column; /* Размещаем текст и число в столбец */
+    align-items: center; /* Выравниваем по центру */
+    min-height: 60px; /* 🔥 Фиксируем высоту блока, чтобы он не менялся */
+}
+
+/* Стили для текста "Your estimated 1RM:" */
+#result strong {
+    font-size: 1em;
+    display: block;
+}
+
+/* Стили для значения 1RM */
+#rm-value {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-top: 5px; /* Немного отступа сверху */
+}
+
+
+/* Скрытые значения 1RM и рекомендаций (размытие) */
+.blurred-text {
+    filter: blur(8px);
+    opacity: 0;
+    transition: filter 0.4s ease-in-out, opacity 0.4s ease-in-out, color 0.4s ease-in-out;
+    display: inline-block;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+/* Плавное появление текста */
+.visible-text {
+    filter: blur(0);
+    opacity: 1;
+    color: #fff;
+    transition: filter 0.4s ease-in-out, opacity 0.4s ease-in-out, color 0.4s ease-in-out;
+}
+
+
+
+
+
+/* Блок рекомендаций (по умолчанию скрыт) */
+.hidden {
+    display: none;
+}
+
+/* Анимация появления рекомендаций */
+#recommendations {
+    margin-top: 20px;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.recommendations-show {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.recommendation-item {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 10px;
+    font-size: 0.9em;
+}
+
+/* Стили для тумблера "Show Recommendations" */
+.toggle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ddd;
+    transition: .4s;
+    border-radius: 25px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 2px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #ffeb3b;
+}
+
+input:checked + .slider:before {
+    transform: translateX(24px);
+}

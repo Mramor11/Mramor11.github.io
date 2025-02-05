@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>Gym Max Rep Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Gym Max Rep Calculator</h1>
+
+        <form id="calculator-form">
+            <!-- Ползунок веса -->
+            <div class="input-group">
+                <label for="weight">Weight Lifted (KG):
+                    <span id="weight-value">100</span>
+                </label>
+                <input type="range" id="weight" min="50" max="150" value="100" step="1">
+            </div>
+
+            <!-- Ползунок повторений -->
+            <div class="input-group">
+                <label for="reps">Reps Completed:
+                    <span id="reps-value">10</span>
+                </label>
+                <input type="range" id="reps" min="2" max="18" value="10" step="1">
+            </div>
+        </form>
+
+        <!-- Блок с 1RM -->
+        <div id="result"></div>
+
+        <!-- Тумблер для включения рекомендаций -->
+        <div class="toggle-container">
+            <label>Show Recommendations</label>
+            <label class="switch">
+                <input type="checkbox" id="toggle-recommendations">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <!-- Блок с рекомендациями (скрыт по умолчанию) -->
+        <div id="recommendations" class="hidden"></div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
